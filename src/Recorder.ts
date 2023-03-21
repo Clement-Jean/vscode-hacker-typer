@@ -8,7 +8,7 @@ export default class Recorder {
   private _disposable: vscode.Disposable;
   private _textEditor: vscode.TextEditor | undefined;
   private _buffers = 0;
-  private _currentChanges: vscode.TextDocumentContentChangeEvent[] = [];
+  private _currentChanges: readonly vscode.TextDocumentContentChangeEvent[] = [];
   private _storage: Storage;
 
   public static register(context: vscode.ExtensionContext) {
@@ -102,8 +102,8 @@ export default class Recorder {
       stop: {
         name: name || null
       },
-      changes: null,
-      selections: null,
+      changes: [],
+      selections: [],
       position: this._buffers++
     });
   }
@@ -126,6 +126,7 @@ export default class Recorder {
               vscode.window.showInformationMessage(
                 `Saved ${macro.buffers.length} buffers under "${macro.name}".`
               );
+              this.dispose();
               command.dispose();
             });
         }

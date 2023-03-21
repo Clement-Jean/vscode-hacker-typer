@@ -26,7 +26,10 @@
   "activationEvents": [
     "onCommand:jevakallio.vscode-hacker-typer.recordMacro",
     "onCommand:jevakallio.vscode-hacker-typer.playMacro",
-    "onCommand:jevakallio.vscode-hacker-typer.deleteMacro"
+    "onCommand:jevakallio.vscode-hacker-typer.deleteMacro",
+    "onCommand:jevakallio.vscode-hacker-typer.removeMacro",
+    "onCommand:jevakallio.vscode-hacker-typer.exportMacro",
+    "onCommand:jevakallio.vscode-hacker-typer.importMacro"
   ],
   "main": "./out/extension",
   "contributes": {
@@ -56,6 +59,10 @@
       {
         "command": "jevakallio.vscode-hacker-typer.insertNamedStop",
         "key": "cmd+shift+t n"
+      },
+      {
+        "command": "jevakallio.vscode-hacker-typer.exitMacro",
+        "key": "cmd+shift+t e"
       }
     ],
     "commands": [
@@ -67,6 +74,16 @@
       {
         "command": "jevakallio.vscode-hacker-typer.playMacro",
         "title": "Play Macro",
+        "category": "HackerTyper"
+      },
+      {
+        "command": "jevakallio.vscode-hacker-typer.exportMacro",
+        "title": "Export Macro",
+        "category": "HackerTyper"
+      },
+      {
+        "command": "jevakallio.vscode-hacker-typer.importMacro",
+        "title": "Import Macro",
         "category": "HackerTyper"
       },
       {
@@ -93,6 +110,11 @@
         "command": "jevakallio.vscode-hacker-typer.backspace",
         "title": "Erase Previous Frame",
         "category": "HackerTyper"
+      },
+      {
+        "command": "jevakallio.vscode-hacker-typer.exitMacro",
+        "title": "Exit Macro",
+        "category": "HackerTyper"
       }
     ]
   },
@@ -104,12 +126,13 @@
     "test": "npm run compile && node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
-    "typescript": "^2.6.1",
-    "vscode": "^1.1.21",
-    "tslint": "^5.8.0",
-    "@types/node": "^8.10.25",
-    "@types/mocha": "^2.2.42",
-    "@types/promise-queue": "^2.2.0"
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.15.5",
+    "@types/promise-queue": "^2.2.0",
+    "@types/vscode": "^1.76.0",
+    "tslint": "^5.20.1",
+    "typescript": "^5.0.2",
+    "vscode-test": "^1.6.1"
   },
   "dependencies": {
     "promise-queue": "^2.2.5",

@@ -95,6 +95,13 @@ export function disable() {
   currentBuffer = undefined;
 }
 
+export function stopMacro() {
+  isEnabled = false;
+  vscode.window.showInformationMessage(
+    `Macro is stopped`
+  );
+}
+
 export function onType({ text }: { text: string }) {
   if (isEnabled) {
     replayQueue.add(
@@ -124,7 +131,7 @@ export function onBackspace() {
 }
 
 function updateSelections(
-  selections: vscode.Selection[],
+  selections: readonly vscode.Selection[],
   editor: vscode.TextEditor
 ) {
   editor.selections = selections;
@@ -137,7 +144,7 @@ function updateSelections(
   );
 }
 
-function advanceBuffer(done: () => void, userInput: string) {
+function advanceBuffer(done: (value: Number) => void, userInput: string) {
   const editor = vscode.window.activeTextEditor;
   const buffer = currentBuffer;
 
@@ -156,7 +163,7 @@ function advanceBuffer(done: () => void, userInput: string) {
       currentBuffer = buffers.get(buffer.position + 1);
     }
 
-    return done();
+    return done(1);
   }
 
   const { changes, selections } = <buffers.Frame>buffer;
@@ -173,7 +180,7 @@ function advanceBuffer(done: () => void, userInput: string) {
       disable();
     }
 
-    done();
+    done(1);
   };
 
   if (changes && changes.length > 0) {
@@ -186,7 +193,7 @@ function advanceBuffer(done: () => void, userInput: string) {
 }
 
 function applyContentChanges(
-  changes: vscode.TextDocumentContentChangeEvent[],
+  changes: readonly vscode.TextDocumentContentChangeEvent[],
   edit: vscode.TextEditorEdit
 ) {
   changes.forEach(change => applyContentChange(change, edit));
