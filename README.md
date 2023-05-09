@@ -53,6 +53,12 @@ Hacker Typer allows you to record yourself programming, and to replay the same k
 3. Pick your previously saved macro.
 4. Rename the json file and pick where you want to save it.
 
+### Import a macro
+
+1. Open a file or a new VSCode window.
+2. Execute `HackerTyper: Import Macro` command from the command palette.
+3. Pick your previously exported json file.
+
 ### Stop points
 
 While in recording mode, execute `HackerTyper: Insert Soft Stop Point` command from the command palette.
