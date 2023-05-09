@@ -40,6 +40,13 @@ Hacker Typer allows you to record yourself programming, and to replay the same k
 7. `Cmd+Shift+Backspace` will move the buffer backwards. Any other key moves it forward.
 8. Feel free to move around the file, highlight code etc. When you continue typing, the next character will be inserted where you did while recording.
 
+### Export a macro
+
+1. Open a file or a new VSCode window.
+2. Execute `HackerTyper: Export Macro` command from the command palette.
+3. Pick your previously saved macro.
+4. Rename the json file and pick where you want to save it.
+
 ### Stop points
 
 While in recording mode, execute `HackerTyper: Insert Soft Stop Point` command from the command palette.
