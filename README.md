@@ -8,7 +8,7 @@ Hacker Typer allows you to record yourself programming, and to replay the same k
 
 😳 **See it live in action: [Writing Code Like a Real Hacker - Reactivate X, London](https://www.youtube.com/watch?v=ulnC-SDBDKE)**
 
-⬇️ **Download the extension from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=jevakallio.vscode-hacker-typer)**
+⬇️ **Download jevakallio's extension from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=jevakallio.vscode-hacker-typer) (this lacks some of the features presented below)**
 
 **🗯 "This is Unix, I know this! Asdfkdhsur dueuekdnfh sueekgkvins dicodksbry"** — [@mwarger](https://twitter.com/mwarger)
 
