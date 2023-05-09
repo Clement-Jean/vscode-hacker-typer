@@ -14,7 +14,7 @@ Hacker Typer allows you to record yourself programming, and to replay the same k
 
 ## Features
 
-- Record and replay **macros**.
+- Record, replay, remove, export, and import **macros**.
 - Insert stop points, so you don't accidentally overrun your talking point while live coding.
 
 ## How to use Hacker Typer
